@@ -1,0 +1,208 @@
+/* variables */
+:root {
+    --ancho-barra-navegacion: 290px;  
+    --borde-menu: 1px solid white;
+    --pa-arriba-abajo: 20px;
+    --color-titulo: rgb(252, 210, 162);
+    --color-nav: #232323;
+}
+
+
+            /* *********************
+                fuentes
+            ********************* */
+
+  /* latin-ext */
+  @font-face {
+    font-family: 'Mingzat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/mingzat/v1/0QIgMX5C-o-oWWyvNtJumsmv.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v26/kJF4BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzazHD_dY40KH8nGzv3fz_VFU22ZZLsYEpzC_1hCs5Y0.woff2) format('woff2');
+  }
+
+  
+/* todo */
+* {
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Mingzat";
+    line-height: 1;
+    font-size: 35px;
+}
+
+
+
+body {
+    background-color: black; 
+}
+
+
+.header-section, h2, h3, #title_nav{
+    font-weight: 700;
+    color: var(--color-titulo) ;
+}
+
+
+
+ #navbar {
+    position: fixed;
+    height: 100%;
+    width: var(--ancho-barra-navegacion); 
+    top: 0px;
+    left: 0px;
+    background-color: var(--color-nav)
+ }
+
+ #title_nav{
+    font-size: 40px;
+    margin: 0px auto;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: var(--borde-menu);
+ }
+ #navbar>ul {
+    height: 100%;
+ }
+ #navbar>ul>li {
+    margin-bottom: 5px;
+    list-style: none;
+    padding-bottom: var(--pa-arriba-abajo);
+    padding-top: var(--pa-arriba-abajo);
+    border-bottom: var(--borde-menu);
+    padding-left: 10px;
+    font-size: 35px;
+ }
+
+ #navbar>ul>li:hover>a {
+    color: var(--color-titulo);
+ }
+ 
+#navbar a {
+    text-decoration: none;
+}
+
+
+ #main-doc {
+    position: absolute;
+    margin-left: calc(var(--ancho-barra-navegacion) + 50px);
+    margin-right: 50px;
+    max-width: 1000px;
+ }
+
+ #main-doc * {
+    margin-bottom: 40px;
+    text-align: justify;
+    line-height: 1.2;
+ }
+
+ .header-section {
+    font-size: 70px;
+    border-bottom:  5px dashed var(--color-titulo);
+    width: fit-content;
+    padding-bottom: 12px;
+    margin-top: 30px;
+} 
+
+#Introducción_a_Python>header{
+margin-top: 0px;
+}
+
+ h2 {
+    font-size: 45px;
+ }
+
+ #main-doc ul {
+    margin: 10px 0px;
+ }
+
+ #main-doc li {
+    margin-left: 20px;
+    margin-bottom: 30px;
+
+ } 
+#main-doc a{
+    color: rgb(114, 114, 209);
+}
+ #main-doc a:hover {
+    color: var(--color-titulo);
+ }
+
+
+ #main-doc li::marker {
+    font-family: "Material Symbols Outlined"  ;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 700,
+    'GRAD' 200,
+    'opsz' 48;
+    color: var(--color-titulo);
+    content: "keyboard_double_arrow_right ";
+    word-spacing: -21px;
+    font-size: 30px;
+    line-height: 0.8;
+ }
+
+ code {
+    background-color: var(--color-titulo);
+    display: block;
+    color: rgb(2, 109, 2);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    text-align: left !important;
+ }
+
+ strong {
+    background-color: #464646;;
+    color: white;
+    font-size: inherit;
+    border-radius: 5px;
+ }
+.advertencia::first-letter { 
+ color: red;
+ font-weight: bold;
+ }
+
+ @media (max-width: 900px){
+    #navbar {
+        position: relative;
+        width: 100%;
+        margin-bottom: 70px;
+    }
+    #main-doc {
+        margin-left: 50px;
+    }
+ }
+
+ @media (max-width: 615px) {
+    #main-doc {
+        width: 84%;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    code {
+        font-size: 20px;
+    }
+ }
+
+ @media (max-width: 475px) {
+
+    code {
+        padding: 1px;
+    }
+
+    .header-section {
+        font-size: 50px;
+        word-wrap: break-word;
+    }
+ }

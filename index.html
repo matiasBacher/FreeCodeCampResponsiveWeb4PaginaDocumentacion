@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header id="title_nav">Python</header>
+        <ul>
+            <li><a href="#Introducción_a_Python" class="nav-link">Introducción a Python</a></li>
+            <li><a href="#Entrada_y_Salida_por_Terminal" class="nav-link">Entrada y Salida por Terminal</a></li>
+            <li><a href="#Tipos_de_Datos_Primitivos_Simples" class="nav-link">Tipos de Datos Primitivos Simples</a></li>
+            <li><a href="#Condicionales" class="nav-link">Condicionales</a></li>
+            <li><a href="#Bucles" class="nav-link">Bucles</a></li>
+            <li><a href="#Referencias" class="nav-link">Referencias</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introducción_a_Python">
+            <header class="header-section">Introducción a Python</header>
+            <h2 id="que-es-python">¿Qué es Python?</h2>
+            <p>Python es un lenguaje de programación de alto nivel multiparadigma que permite:</p>
+            <ul>
+                <li>Programación imperativa</li>
+                <li>Programación funcional</li>
+                <li>Programación orientada a objetos</li>
+            </ul>
+            <p>Fue creado por Guido van Rossum en 1990 aunque actualmente es desarrollado y mantenido por la Python
+                Software Foundation</p>
+            <h2 id="principales-ventajas-python">Principales ventajas de Python</h2>
+            <ul>
+                <li>Es de código abierto (certificado por la OSI).</li>
+                <li>Es interpretable y compilable.</li>
+                <li>Es fácil de aprender gracias a que su sintaxis es bastante legible para los humanos.</li>
+                <li>Es un lenguaje maduro (29 años).</li>
+                <li>Es fácilmente extensible e integrable en otros lenguajes (C, java).</li>
+                <li>Esta mantenido por una gran comunidad de desarrolladores y hay multitud de recursos para su
+                    aprendizaje.</li>
+            </ul>
+            <h2 id="tipos-de-ejecucion">Tipos de ejecución</h2>
+            <h3>Interpretado en la consola de Python</h3>
+            <p>Se ejecuta cada instrucción que introduce el usuario de manera interactiva.</p>
+            <code>
+                    > python <br>
+                    >>> name = "Alf" <br>
+                    >>> print("Hola ", name) <br>
+                    Hola Alf <br>
+                </code>
+            <h3>Interpretado en fichero</h3>
+            <p>Se leen y se ejecutan una a una todas las instrucciones del fichero.</p>
+            <code>
+                    # Fichero hola.py <br>
+                    name = "Alf" <br>
+                    print("Hola ", name) <br>
+                </code>
+            <code>
+                    > python hola.py <br>
+                    Hola Alf <br>
+                </code>
+            <h3>Compilado a bytecode</h3>
+            <code>
+                    # Fichero hola.py <br>
+                    name = "Alf" <br>
+                    print("Hola " + name) <br>
+                </code>
+            <code>
+                    > python -O -m py_compile hola.py <br>
+                    > python __pycache__/hola.cpython-37.pyc <br>
+                    Hola Alf
+                </code>
+        </section>
+        <section class="main-section" id="Tipos_de_Datos_Primitivos_Simples">
+            <header class="header-section">Tipos de Datos Primitivos Simples</header>
+            <h2 id="tipos-de-datos-simples">Tipos de datos primitivos simples</h2>
+            <ul class="firstBold">
+                <li>Números (numbers): Secuencia de dígitos (pueden incluir el - para negativos y el . para decimales)
+                    que representan números.</li>
+                <li>Cadenas (strings): Secuencia de caracteres alfanuméricos que representan texto.</li>
+                <li>Booleanos (boolean): Contiene únicamente dos elementos <strong>True</strong> y <strong>False</strong> que representan los valores
+                    lógicos verdadero y falso respectivamente.</li>
+            </ul>
+            <p>Estos datos son inmutables, es decir, su valor es constante y no puede cambiar.</p>
+            <h2 id="contenedores">Tipos de datos primitivos compuestos
+                (contenedores)</h2>
+            <ul>
+                <li>Listas (lists): Colecciones de objetos que representan secuencias ordenadas de objetos de distintos
+                    tipos. Se representan con corchetes y los elementos se separan por comas.</li>
+                <li>Tuplas (tuples). Colecciones de objetos que representan secuencias ordenadas de objetos de distintos
+                    tipos. A diferencia de las listas son inmutables, es decir, que no cambian durante la ejecución. Se
+                    representan mediante paréntesis y los elementos se separan por comas.</li>
+                <li>Diccionarios (dictionaries): Colecciones de objetos con una clave asociada. Se representan con
+                    llaves, los pares separados por comas y cada par contiene una clave y un objeto asociado separados
+                    por dos puntos.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Entrada_y_Salida_por_Terminal">
+            <header class="header-section">Entrada y Salida por Terminal</header>
+            <h2 id="input">Entrada por terminal <strong>(input()</strong>)</h2>
+            <p>Para asignar a una variable un valor introducido por el usuario en la consola se utiliza la instrucción
+            </p>
+            <p><strong>input(mensaje)</strong> : Muestra la cadena <strong>mensaje</strong> por la terminal y devuelve una cadena con la entrada del
+                usuario.</p>
+            <p class="advertencia">⚠ El valor devuelto siempre es una cadena, incluso si el usuario introduce un dato numérico.</p>
+            <h2 id="print">Salida por terminal (<strong>print()</strong>)</h2>
+            <p>Para mostrar un dato por la terminal se utiliza la instrucción</p>
+            <p>print(dato1, ..., sep=' ', end='n', file=sys.stdout)</p>
+            <p>donde</p> 
+            <ul>
+                <li><strong>dato1, ...</strong> son los datos a imprimir y pueden indicarse tantos como se quieran separados por comas.
+                </li>
+                <li><strong>sep</strong> establece el separador entre los datos, que por defecto es un espacio en blanco ' '.</li>
+                <li><strong>end</strong> indica la cadena final de la impresión, que por defecto es un cambio de línea \n.</li>
+                <li><strong>file</strong> indica la dirección del flujo de salida, que por defecto es la salida estándar <strong>sys.stdout</strong>.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Condicionales">
+            <header class="header-section">Condicionales</header>
+            <h2 id="if">Condicionales (<strong>if</strong>)</h2>
+            <code>
+                if condición1: <br>
+                &emsp; bloque código <br>
+                elif condición2: <br>
+                &emsp; bloque código <br>
+                … <br>
+                else : <br>
+                &emsp; bloque código <br>
+            </code>
+            <p>Evalúa la expresión lógica <strong>condición1</strong> y ejecuta el primer bloque de código si es <strong>True</strong>; si no, evalúa la siguientes condiciones hasta llegar a la primera que es <strong>True</strong> y ejecuta el bloque de código asociado. Si ninguna condición es <strong>True</strong> ejecuta el bloque de código después de<strong> else</strong>:.</p>
+            <p>Pueden aparecer varios bloques <strong>elif</strong> pero solo uno <strong>else</strong> al final.</p>
+            <p class="advertencia">⚠ Los bloques de código deben estar indentados por 4 espacios.</p>
+            <p>La instrucción condicional permite evaluar el estado del programa y tomar decisiones sobre qué código ejecutar en función del mismo.</p>
+            <code>
+                >>> edad = 14 <br>
+                >>> if edad <= 18 :  <br>
+                ...&emsp; print('Menor') <br>
+                ... elif edad > 65: <br>
+                ...&emsp; print('Jubilado') <br>
+                ... else: <br>
+                ...&emsp; print('Activo') <br>
+                ... <br>
+                Menor <br>
+                >>> age = 20 <br>
+                >>> if edad <= 18 :  <br>
+                ...&emsp; print('Menor') <br>
+                ... elif edad > 65: <br>
+                ...&emsp; print('Jubilado') <br>
+                ... else: <br>
+                ...&emsp; print('Activo') <br>
+                ... <br>
+                Activo <br>
+            </code>
+        </section>
+        <section class="main-section" id="Bucles">
+            <header class="header-section">Bucles</header>
+            <h2 id="while">Bucles condicionales (<strong>while</strong>)</h2>
+            <code>
+                while condición: <br>
+                &emsp; bloque código <br>
+            </code>
+            <p>Repite la ejecución del bloque de código mientras la expresión lógica <strong>condición</strong> sea cierta.</p>
+            <p>Se puede interrumpir en cualquier momento la ejecución del bloque de código con la instrucción<strong> break</strong>.</p>
+            <code>
+                >>> # Pregunta al usuario por un número hasta que introduce 0. <br>
+                >>> num = None <br>
+                >>> while num != 0: <br>
+                ...&emsp; num = int(input('Introduce un número: ')) <br>
+                ...  <br>
+                Introduce un número: 2 <br>
+                Introduce un número: 1 <br>
+                Introduce un número: 0 <br>
+                >>>  <br>
+            </code>
+            <h2 id="for">Bucles iterativos (<strong>for</strong>)</h2>
+            <code>
+                for i in secuencia: <br>
+                &emsp; bloque código <br>
+            </code>
+            <p>Repite la ejecución del bloque de código para cada elemento de la <strong>secuencia</strong>, asignado dicho elemento a <strong>i</strong> en cada repetición.</p>
+            <p>Se puede interrumpir en cualquier momento la ejecución del bloque de código con la instrucción <strong>break</strong> o saltar la ejecución para un determinado elemento de la secuencia con la instrucción <strong>continue</strong>.</p>
+            <p>Se utiliza fundamentalmente para recorrer colecciones de objetos como cadenas, listas, tuplas o diccionarios.</p>
+            <p>A menudo se usan con la instrucción <strong>range</strong>:</p>
+            <ul>
+                <li><strong>range(fin)</strong> : Genera una secuencia de números enteros desde 0 hasta <strong>fin-1</strong>.</li>
+                <li><strong>range(inicio, fin, salto)</strong> : Genera una secuencia de números enteros desde <strong>inicio</strong> hasta <strong>fin-1</strong> con un incremento de <strong>salto</strong>.</li>
+            </ul>
+            <code>
+                >>> palabra = 'Python' <br>
+                >>> for letra in palabra: <br>
+                ...&emsp; print(letra) <br>
+                ...&emsp; <br>
+                P <br>
+                y <br>
+                t <br>
+                h <br>
+                o <br>
+                n <br>
+            </code>
+            <code>
+                >>> for i in range(1, 10, 2): <br>
+                ... print(i, end=", ") <br>
+                ... <br>
+                1, 3, 5, 7, 9, >>> <br>
+            </code>
+        </section>
+        <section class="main-section" id="Referencias">
+            <header class="header-section">Referencias</header>
+            <p>Toda la documentación en esta página está tomada de <a href="https://aprendeconalf.es/docencia/python/manual/bucles/">Aprende con Alf</a></p>
+        </section>
+    </main>
+</body>
+
+</html>
